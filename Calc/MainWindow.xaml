@@ -1,0 +1,34 @@
+﻿<Window x:Class="Calc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="531.994">
+	<StackPanel>
+		<Label Content="{Binding A}" HorizontalAlignment="Right" FontSize="24"/>
+		<UniformGrid Columns="4">
+			<Button Content="C" Height="70" Click="Unos"/>
+			<Button Content="CE" Click="Unos"/>
+			<Label/>
+			<Button Content="=" Click="Unos"/>
+			<Button Content="7" Click="Unos"/>
+			<Button Content="8" Click="Unos"/>
+			<Button Content="9" Click="Unos"/>
+			<Button Content="+" Click="Unos"/>
+			<Button Content="4" Click="Unos"/>
+			<Button Content="5" Click="Unos"/>
+			<Button Content="6" Click="Unos"/>
+			<Button Content="-" Click="Unos"/>
+			<Button Content="1" Click="Unos"/>
+			<Button Content="2" Click="Unos"/>
+			<Button Content="3" Click="Unos"/>
+			<Button Content="*" Click="Unos"/>
+			<Button Content="0" Click="Unos"/>
+			<Button Content="." Click="Unos"/>
+			<Label/>
+			<Button Content="/" Click="Unos"/>
+		</UniformGrid>
+	</StackPanel>
+</Window>
