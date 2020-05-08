@@ -13,6 +13,10 @@
 			<Button Content="CE" Click="Unos"/>
 			<Label/>
 			<Button Content="=" Click="Unos"/>
+			<Button Content="MR" Click="Unos"/>
+			<Button Content="MC" Click="Unos"/>
+			<Button Content="M+" Click="Unos"/>
+			<Button Content="M-" Click="Unos"/>
 			<Button Content="7" Click="Unos"/>
 			<Button Content="8" Click="Unos"/>
 			<Button Content="9" Click="Unos"/>

@@ -32,8 +32,10 @@ namespace Calc
 			}
 		}
 		public long _b;
+		public long _m;
 
-		bool UnesenaOperacija;
+		char UnesenaOperacija;
+		bool ProsloDugmeOperacija;
 
 		public MainWindow()
 		{
@@ -47,10 +49,10 @@ namespace Calc
 		{
 			if (int.TryParse((sender as Button).Content.ToString(), out int broj))
 			{
-				if (UnesenaOperacija)
+				if (ProsloDugmeOperacija)
 				{
 					A = broj;
-					UnesenaOperacija = false;
+					ProsloDugmeOperacija = false;
 				}
 				else
 				{
@@ -66,7 +68,8 @@ namespace Calc
 					case "C": 
 						A = 0;
 						_b = 0;
-						UnesenaOperacija = false;
+						ProsloDugmeOperacija = false;
+						UnesenaOperacija = ' ';
 						break;
 					case "+":
 						if (_b == 0)
@@ -76,7 +79,32 @@ namespace Calc
 							A += _b;
 							_b = A;
 						}
-						UnesenaOperacija = true;
+						UnesenaOperacija = '+';
+						ProsloDugmeOperacija = true;
+						break;
+					case "=":
+						switch(UnesenaOperacija)
+						{
+							case '+':
+								A += _b;
+								_b = 0;
+								UnesenaOperacija = ' ';
+								ProsloDugmeOperacija = true;
+								break;
+						}
+						break;
+					case "MR":
+						A = _m;
+						ProsloDugmeOperacija = true;
+						break;
+					case "MC":
+						_m = 0;
+						break;
+					case "M+":
+						_m += A;
+						break;
+					case "M-":
+						_m -= A;
 						break;
 				}
 		}
